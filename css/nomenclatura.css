@@ -1,0 +1,379 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+*::selection{
+  background: orange;
+}
+
+/*-------------------------------------------- PRINCIPAL -----------------------------------------------------*/
+/*
+section{
+	display: flex;
+	min-height: 20%;
+	justify-content: center;
+	align-items: center;
+}
+*/
+
+.banner{
+  position: relative;/*
+  background: linear-gradient(120deg,#eef3f5,#d7e4e8,#ccd1d3);*/
+
+  background: linear-gradient(120deg,#1776e1,#32ca19,#e16817);
+  width: 100%;
+  height: 20%,
+  justify-content: center;
+  align-items: center;
+}
+
+
+.triangle-topleft { 
+  width: 110%;
+  padding-top: 120px;
+  font-size: 20px;
+  height: 500px;
+  background: #141f6c;
+  color: white;/*
+  background: linear-gradient(120deg,#1776e1,#32ca19,#e16817);*/
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0%, 99% 76%, 0 66%);
+}
+
+.triangle-topleft img{
+  width: 300px;
+  height: 300px;
+  top: 30px;
+  left: 180px;
+  position: absolute;
+}
+
+
+/*------------------------------- TOOL TIPS -------------------*/
+
+.tooltip-up{
+	position: absolute;
+	right: 2.5%;
+	margin-top: -5%;
+}
+
+.tooltip-up ul{
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.tooltip-info{
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.03rem;
+}
+
+.tooltip-up ul li{
+	position: relative;
+	list-style: none;
+	width: 200px;
+	text-align: center;
+	height: 50px;
+	margin: 0 20px;
+  transition: all ease 0.3s;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+.tooltip-up ul li:hover{
+	font-size: 14px;
+}
+
+.tooltip-up ul li .tooltip{
+	position: absolute;
+	bottom: 55px;
+	width: 200px;
+	/*width: 400px;*/
+	/*height: 120px;*/
+	height: 200px;
+	background: white;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+	transform: translateX(-50%) translateY(-50px);
+
+}
+
+.tooltip-up ul li .tooltip:before{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: white;
+	bottom: -15px;
+	/*left: 194px;*/
+	left: 100px;
+	transform: rotate(45deg);
+}
+
+.tooltip-up ul li .tooltip h2{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+.tooltip-up ul li:hover .tooltip{
+	visibility: visible;
+	opacity: 1;
+	transform: translateX(-50%) translateY(0px);
+}
+
+/*------------------------------------------ MENU -------------------------------------------------------------*/
+
+.header{
+      position: absolute;
+      height: 20px;
+      width: 100%;
+      background: transparent;
+      padding: 0 20px;
+      color: #fff;
+      right: 30%;
+      transition: top 0.8s;
+      z-index: 99;
+}
+
+
+.menubar{
+
+      text-align: center;
+      line-height: 100px;
+
+}
+
+.menubar a{
+      font-size: 13px;
+      right: 50%;
+      height: 80px;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0 13px;
+}
+
+.menubar a:hover,
+.menu a:hover{
+      transition: ease 0.5s;
+      
+	background: orange;
+	box-shadow: 0 0 0 4px #333,
+			    0 0 0 6px orange;
+}
+
+.hamburger
+{
+  position: fixed;
+  right:  3%;
+  top: 2%;
+  z-index: 100;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  float: right;
+  line-height: 100px;
+  text-align: center;
+  
+  line-height: normal;
+  transition: 0.1s;
+
+      
+}
+
+.hamburger:hover{
+      color: orange;
+}
+
+
+.hide-menu-btn{
+      position: absolute;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      margin: 15%;
+    
+      display: block;
+      z-index: 100;
+      top: -5%;
+
+      right:  -1%;
+      transition: all ease 0.5s;
+}
+
+.hide-menu-btn:hover{
+      color: orange;
+}
+
+.menu{
+  overflow-y: hidden;
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  background: #333;
+  right:  -100%;
+  top: 0%;
+  z-index: 100;
+  float: right;
+  line-height: 100px;
+  text-align: center;
+  padding: 80px 0;
+  line-height: normal;
+  transition: 0.7s;
+
+}
+
+.menu a{
+  font-size: 14.5px;
+  letter-spacing: 0.1rem;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+  display: block;
+  transition: 0.4s;
+  padding: 20px;
+}
+
+.showmenu{
+  right: 0;
+}
+
+/*-------------------------------------------- CONTENIDO -----------------------------------------------------*/
+
+.content{
+    height: 420vh;/*
+    background: linear-gradient(120deg,#07237e,#3b73e4,#3b47e4);*/
+    position: relative;
+    background: #141f6c;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-left: 50px;
+}
+
+.content h1{
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.content p{
+  color: white;
+  font-size: 18px;
+  margin-right: 100px;
+}
+
+.ejemplo{
+  width: 100%;
+  height: 100px;
+  padding-top: 25px;
+  position: relative;
+  color: #11bd0d;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 35px;
+  transition: all ease 0.5s;
+}
+
+.ejemplo:hover{
+  letter-spacing: 0.15rem;
+}
+
+label{
+  color: orange; 
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 21px;
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+}
+
+.mark{
+  color: white;
+  background: #3b47e4;
+}
+
+
+.tabla{
+  display: none;
+  transition: all ease 0.5s;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  left: 20%;
+  height: 25%;
+  width: 55%;
+  position: relative;
+  overflow-y: hidden;
+}
+
+
+.tabla img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabla-mostrar{
+  width: 250px;
+  height: 55px;
+  transition: all ease 0.3s;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  font-weight: lighter;
+  background: #11bd0d;
+  border: inherit;
+  border: 2px solid white;
+  margin-left: 500px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  outline:none;
+}
+
+.tabla-mostrar:hover{
+  font-size: 23px;
+  background: #1acb15;
+}
+
+.tabla-ocultar{
+  width: 250px;
+  height: 55px;
+  display: none;
+  transition: all ease 0.3s;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  font-weight: lighter;
+  background: #ec1039;
+  border: inherit;
+  border: 2px solid white;
+  margin-left: 500px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  outline:none;
+}
+
+.tabla-ocultar:hover{
+  font-size: 23px;
+  background: #b70a2b;
+}
+
+.numero{
+  font-size: 35px;
+  color: #e6e7ee;
+}

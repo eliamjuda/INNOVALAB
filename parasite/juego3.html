@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+		<meta charset="UTF-8" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+		<link rel="icon" type="image/png" href="../img/logo2.png">
+		<link rel="stylesheet" type="text/css" href="../fontawesome/css/all.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/juego3.css" />
+		<title>INNOVALAB | Quiz</title>
+	</head>
+	<body>
+
+		<header>
+			<div class="logo-container">
+				<img src="../img/logo.png" alt="logo" />
+				<h4 class="logo">INNOVALAB</h4>
+			</div>
+		</header>
+
+		<main>
+			<section class="presentation">
+				<div class="introduction">
+					<div class="intro-text">
+						<h1>¡Bien! <br> Has terminado tu prueba</h1>
+						<p class="resultado-p">
+							Acá aparecerá el resultado, acá aparecerá el resultado, el resultado aparecerá acá aparecerá el resultado.
+						</p>
+					</div>
+					<div class="intro-resultado">
+						<p id="resultado-final" class="resultado-final sp">
+							100
+						</p>
+						<p class="resultado-final sc">
+							/100
+						</p>
+					</div>
+					<div class="cta">
+						<button class="btn-salir">Salir</button>
+					</div>
+				</div><!-- 
+				<div class="cover">
+					<img src="../img/parasiteplay.png" />
+				</div> -->
+			</section>
+
+
+			<img class="big-circle" src="../img/big-eclipse.svg" alt="" />
+			<img class="medium-circle" src="../img/mid-eclipse.svg" alt="" />
+			<img class="small-circle" src="../img/small-eclipse.svg" alt="" />
+		</main>
+
+		<script type="text/javascript">
+
+			$( document ).ready(function() {
+   				
+
+
+				var puntuacionFinal = sessionStorage.getItem("Puntaje");
+
+				
+				$("#resultado-final").text(puntuacionFinal);
+
+				if (puntuacionFinal <= 50) {
+
+					$("#resultado-final").css("color","#F90C2C");
+					$(".resultado-p").text("¡Quizá este no era tu día! Tu promedio ha sido bajo, te recomendamos que te sigas pasando por nuestra página para mejorar tu calificación.");
+				}
+				if (puntuacionFinal >= 60) {
+
+					$("#resultado-final").css("color","#F9D90C");
+					$(".resultado-p").text("¡Bien! Tu promedio ha sido bueno, pero nosotros sabemos que tu eres más que bueno, regresa pronto y rompe con tu récord.");
+				}if (puntuacionFinal == 100) {
+
+					$("#resultado-final").css("color","#0cfd32");
+					$(".resultado-p").text("¡Excelente! Eres imparable, tu promedio refleja tu gran avance y conocimientos sobre parasitología.  ");
+				}
+   				
+   				$(".btn-salir").click(function(){
+   					
+   					sessionStorage.clear();
+   					
+   					window.location.href='../index.html';
+   				});
+
+			
+			});
+
+		</script>
+		<script src="../js/jquery.js"></script>
+	</body>
+</html>

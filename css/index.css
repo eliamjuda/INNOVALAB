@@ -1,0 +1,905 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+
+
+}
+
+*::selection{
+  background: orange;
+}
+
+/*-------------------------------------------- PRINCIPAL -----------------------------------------------------*/
+
+.headline {
+	z-index: 1;
+	line-height: 0.8;
+	transform: translate(0%, -230%);
+	left: 2.5%;
+	position: absolute;
+	font-weight: normal;
+	text-align: center;
+	font-size: 8.5vw;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: left;
+    text-shadow: 2px 2px 7px black;
+	color: rgba(250,250,250,0.8);
+	font-family: Futura, "futura-pt", Arial, sans-serif;
+}
+
+
+.hero{
+	height: 100vh;
+	width: 100%;
+	position: relative;
+	z-index: -1;
+}
+
+.hero img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+
+
+section{
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.big-rose{
+    position: absolute;
+    right: 1.5%;
+    top: -1.5%;
+    z-index: 10;
+}
+
+.medium-rose{
+
+    position: absolute;
+    left: 0%;
+    top: 5%;
+    z-index: 0;
+}
+
+.up-rose{
+	position: absolute;
+	top: 0%;
+	right: 0;
+}
+
+
+.small-rose{
+    position: absolute;
+    left: 0%;
+
+    transform: translate(0%,0%);
+    z-index: 0;
+}
+
+/*------------------------------- TOOL TIPS -------------------*/
+
+.tooltip-up{
+	position: absolute;
+	right: 2.5%;
+	margin-top: -5%;
+}
+
+.tooltip-up ul{
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.tooltip-info{
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.03rem;
+}
+
+.tooltip-up ul li{
+	position: relative;
+	list-style: none;
+	width: 50px;
+	text-align: center;
+	height: 20px;
+	margin: 0 20px;
+	transition: 0.5s;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+.tooltip-up ul li:hover{
+	background: orange;
+	box-shadow: 0 0 0 4px #333,
+		    	    0 0 0 6px orange;
+
+}
+
+.tooltip-up ul li .tooltip{
+	position: absolute;
+	bottom: 55px;
+	width: 200px;
+	/*width: 400px;*/
+	/*height: 120px;*/
+	height: 200px;
+	background: white;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+	transform: translateX(-50%) translateY(-50px);
+
+}
+
+.tooltip-up ul li .tooltip:before{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: white;
+	bottom: -15px;
+	/*left: 194px;*/
+	left: 100px;
+	transform: rotate(45deg);
+}
+
+.tooltip-up ul li .tooltip h2{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+.tooltip-up ul li:hover .tooltip{
+	visibility: visible;
+	opacity: 1;
+	transform: translateX(-50%) translateY(0px);
+}
+
+/*------------------------------------------ MENU -------------------------------------------------------------*/
+
+.header{
+      position: absolute;
+      height: 20px;
+      width: 100%;
+      background: transparent;
+      padding: 0 20px;
+      color: #fff;
+      right: 30%;
+      transition: top 0.8s;
+      z-index: 99;
+}
+
+
+.menubar{
+
+      text-align: center;
+      line-height: 100px;
+
+}
+
+.menubar a{
+      font-size: 13px;
+      right: 50%;
+      height: 80px;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0 13px;
+}
+
+.menubar a:hover,
+.menu a:hover{
+      transition: ease 0.5s;
+      
+	background: orange;
+	box-shadow: 0 0 0 4px #333,
+			    0 0 0 6px orange;
+}
+
+.hamburger
+{
+  position: fixed;
+  right:  3%;
+  top: 2%;
+  z-index: 100;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  float: right;
+  line-height: 100px;
+  text-align: center;
+  
+  line-height: normal;
+  transition: 0.1s;
+
+      
+}
+
+.hamburger:hover{
+      color: orange;
+}
+
+
+.hide-menu-btn{
+      position: absolute;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      margin: 15%;
+    
+      display: block;
+      z-index: 100;
+      top: -5%;
+
+      right:  -1%;
+      transition: all ease 0.5s;
+}
+
+.hide-menu-btn:hover{
+      color: orange;
+}
+
+.menu{
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  background: #333;
+  right:  -100%;
+  top: 0%;
+  z-index: 100;
+  float: right;
+  line-height: 100px;
+  text-align: center;
+  padding: 80px 0;
+  line-height: normal;
+  transition: 0.7s;
+
+}
+
+.menu a{
+  font-size: 14.5px;
+  letter-spacing: 0.1rem;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+  display: block;
+  transition: 0.4s;
+  padding: 20px;
+}
+
+.showmenu{
+  right: 0;
+}
+
+/*-------------------------------------------- CONTENIDO -----------------------------------------------------*/
+
+.content{
+    min-height: 280vh;
+    /*background: linear-gradient(120deg,#2d314e,#1f2135,#1b1f3d);*/
+    background-color:#0A2B3E;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.intro{
+
+  color: white;/*
+  background: red;*/
+  position: absolute;
+  width: 1200px;
+  height: 1000px;
+  transition: all ease 0.5s;
+
+  opacity: 0;
+  display: none;
+
+  left: -105%;
+  top: 50px;
+}
+
+
+#intro1{
+  display: block;
+  left: 5%;
+  opacity: 1;
+  min-height: 100vh;
+}
+
+.intro h1{
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 35px;
+  font-weight: normal;
+  letter-spacing: .2rem;
+}
+
+.intro p{
+  font-size: 18px;
+  margin-left: 20px;
+  letter-spacing: .014rem;
+  word-spacing: 2pt;
+  line-height: 22pt;
+}
+
+.caja-image1{
+  z-index: 9;
+  width: 50%;
+  height: 100%;
+  left: 25%;
+  top: 5%;
+  color: black;
+  transition: all ease 0.5s;
+  position: relative;
+  background: #333;
+  box-shadow: 3px 4px 12px 1px black;
+}
+
+.caja-image1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caja-image2 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caja-image2{
+  z-index: 9;
+  width: 85%;
+  height: 30%;
+  left: 8%;
+  top: 5%;
+  color: black;
+  transition: all ease 0.5s;
+  position: relative;
+  background: #333;
+  box-shadow: 3px 4px 12px 1px black;
+}
+
+
+.desaparecer{
+  display: none;
+}
+
+.siguiente{
+  position: absolute;
+  right: 6%;
+  cursor: pointer;
+  top: 20px;
+  font-size: 50px;
+  color: white;
+  transition: all ease 0.3s;
+}
+
+
+.siguiente i:hover,
+.anterior i:hover{
+  color: orange;
+
+}
+
+
+
+
+.anterior i{
+  background: white;
+  border-radius: 40px;
+  color: black;
+  font-size: 50px;
+  transition: all ease 0.3s;
+}
+
+.siguiente i{
+  background: white;
+  border-radius: 40px;
+  color: black;
+  font-size: 50px;
+  transition: all ease 0.3s;
+}
+
+.anterior{
+  position: absolute;
+  left: 9.5%;
+  z-index: 99;
+  cursor: pointer;
+  top: 20px;
+  font-size: 50px;
+  color: white;
+  transition: all ease 0.3s;
+}
+
+
+.marca{
+  color: orange;
+  background: black;
+  font-weight: lighter;
+}
+
+
+.next{
+  width: 150px;
+  height: 50px;
+  transition: all ease 0.3s;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  font-weight: lighter;
+  background: orange;
+  border: inherit;
+  border: 2px solid white;
+  position: absolute;
+  right: 0;
+  margin-top: 100px;
+  outline:none;
+}
+
+.next:hover{
+  font-size: 23px;
+  background: violet;
+}
+
+/*
+--------------------------------- INFO DE IMAGENES -----------------------------------------------------------------*/
+mark{
+  background: orange;
+}
+.info-box{
+
+  color: black;
+  transition: all ease 0.3s;
+  position: relative;
+}
+
+.info-box .info-tip .info-tool p{
+  font-size: 14px;
+  letter-spacing: 0rem;
+  word-spacing:1pt;
+  line-height: 12pt;
+}
+
+.info-box .info-tip{
+  bottom: 55px;
+  width: 500px;
+  height: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateX(-5%) translateY(-80px);
+  visibility: hidden;
+  transition: 0.5s;
+  text-align: center;
+  background: white;
+  position: absolute;
+}
+
+
+.info-box .info-tip .info-tool:before{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: white;
+  bottom: -15px;
+  /*left: 194px;*/
+  left: 30px;
+  transform: rotate(45deg);
+}
+
+
+
+.info-circle:hover .info-tip{
+  background: white;
+  box-shadow: 0px 1px 20px 0.2px black;
+}
+
+.info-circle:hover .info-tip{
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-5%) translateY(-12px);
+}
+
+.showtip{
+  display: block;
+}
+
+.info-circle{
+  position: absolute;
+  color: orange;
+  top: -5%;
+  left: -1%;
+  background: white;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.info-circle .fa-info-circle{
+  font-size: 40px;
+}
+
+
+/*--------------------------------- -------------PROTOZOARIOS------------ -----------------------------------*/
+
+
+
+.protozoa-parallax{
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.protozoarios{
+    height: 300vh;
+    background: linear-gradient(120deg,#3D7F0F,#30CD17,#22A90D);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro2{
+
+  color: white;/*
+  background: red;*/
+  position: relative;
+  width: 1200px;
+  height: 1000px;
+  left: -2%;
+  top: -22%;
+}
+
+
+.intro2 h1{
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+  font-weight: normal;
+  letter-spacing: .2rem;
+}
+
+#intro-p2{
+  font-size: 18px;
+  letter-spacing: .014rem;
+  margin-left: 80px;
+  word-spacing: 2pt;
+  line-height: 22pt;
+  margin-bottom: 50px;
+}
+
+.down{
+  margin-top: 180px;
+  padding-left: 30px;
+}
+
+#intro-p3{
+  font-size: 18px;
+  letter-spacing: .014rem;
+  margin-left: 80px;
+  word-spacing: 2pt;
+  line-height: 22pt;
+  margin-bottom: 50px;
+}
+
+.comillas{
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.cafe{
+  color: orange;
+  font-weight: lighter;
+  background: black;
+}
+
+.numero{
+  position: relative;
+  top: 152px;
+  font-size: 35px;
+  color: #e6e7ee;
+}
+
+.parasito1{
+  z-index: 9;
+  position: absolute;
+  left: -170px;
+  top: -50px;
+  width: 40%;
+}
+
+.parasitopopo{
+  z-index: 9;
+  position: absolute;
+  left: -40px;
+  top: -10px;
+  width: 20%;
+}
+
+.parasitopopo2{
+  z-index: 9;
+  position: absolute;
+  left: -0px;
+  top: 20px;
+  width: 28%;
+}
+
+.clasificacionpiramide{
+  z-index: 9;
+  position: absolute;
+  left: -60px;
+  top: -135px;
+  width: 34%;
+}
+
+.protozoo{
+  z-index: 9;
+  position: absolute;
+  left: -130px;
+  top: -55px;
+  width: 60%;
+
+}
+
+.morfologia{
+  width: 500px;
+  height: 300px;
+  background: red;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.label2{
+  font-size: 20px;
+  position: absolute;
+}
+
+.parasitos{
+  right: 34%;
+  top: 47%;
+}
+
+.metazoarios{
+  right: 50%;
+  top: 64%;
+}
+
+.proto{
+  right: 13%;
+  top: 64%;
+}
+
+.antropodos{
+  right: 42%;
+  top: 80%;
+}
+
+.unicelulares{
+  right: 5%;
+  top: 80%;
+}
+
+.nematodos{
+  right: 88%;
+  top: 80%;
+}
+
+.oldbook{
+  z-index: 9;
+  position: absolute;
+  left: -50px;
+  top: -20px;
+  width: 40%;
+}
+
+.clasificaciones{
+  width: 100%;
+  top: 35%;
+  position: absolute;
+}
+
+.numero2{
+  position: relative;
+  top: 100px;
+  font-size: 35px;
+  color: #e6e7ee;
+}
+
+.banner-azul{
+  width: 1100px;
+  position: relative;
+  left: 7%;
+  height: 200px;
+  padding-top: 40px;
+  text-align: center;
+  box-shadow: 2px 2px 10px black;
+  background: #141517;
+  margin-bottom: 80px;
+}
+.subtitulo{
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.mark-titles{
+  background: purple;
+  color: white;
+}
+
+
+
+/*
+letter-spacing: 2pt;       para separar entgre letras 
+word-spacing: 5pt;         para separacion entre palabras   
+line-height: 20pt;         para la separacion entre lineas  
+text-indent: 30pt;         para sangrias  */
+
+
+.sticky {
+  background: white !important;
+}
+
+
+
+
+
+.fade{
+ -webkit-animation-name:fade;
+ -webkit-animation-duration:1.5s;
+ animation-name:fade;
+ animation-duration:1.5s;
+}
+
+@-webkit-keyframes fade{
+ from{opacity:.4}
+ to{opacity:1}
+}
+
+@keyframes fade{
+ from{opacity:.4}
+ to{opacity:1}
+}
+
+
+
+.caja-de-info{
+  width: 90%;
+  left: 5%;
+  background: #333;
+  top: 10%;
+  height: 90%;
+  border: 1px solid white;
+  position: relative;
+}
+
+b{
+  color: orange;
+  font-weight: lighter;
+}
+
+#caja-de-info{
+  display: none;
+}
+
+.caja-de-info p{
+
+  text-align: center;
+  font-weight: lighter;
+}
+
+
+
+.info-slider1 p{
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+  text-align: justify;
+  padding: 20px   40px   60px;
+}
+
+.info-slider-bigger p{
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+  text-align: justify;
+  padding: 20px   40px   60px;
+}
+
+
+.info-slider-bigger h1{
+  text-align: center;
+  font-size: 30px;
+  padding: 20px 40px 10px;
+} 
+
+
+.info-slider1 h1{
+  text-align: center;
+  font-size: 30px;
+  padding: 20px 40px 10px;
+} 
+
+
+.red-alert{
+  width: 1000px;
+  height: 50px;
+  position: absolute;
+  background: #E1061E;
+  left: 10%;
+  top: -7%;
+}
+
+.orange-alert{
+  width: 1000px;
+  height: 50px;
+  position: absolute;
+  background: orange;
+  left: 10%;
+  top: -7%;
+}
+
+
+.siguiente2{
+  cursor: pointer;
+  position: absolute;
+  top: 56%;
+  left: 93%;
+  transition: all ease 0.3s;
+}
+
+.siguiente2 i{
+  color: #E1061E;
+  background: white;
+  border-radius: 40px;
+  font-size: 50px;
+  transition: all ease 0.3s;
+}
+
+.siguiente2 i:hover{
+  color: orange;
+}
+
+
+.anterior2{
+  cursor: pointer;
+  position: absolute;
+  left: 3%;
+  top: 56%;
+}
+
+
+.anterior2 i{
+  background: white;
+  border-radius: 40px;
+  color: #E1061E;
+  font-size: 50px;
+  transition: all ease 0.3s;
+}
+
+.anterior2 i:hover{
+  color: orange;
+}
+
+.bstrong{
+  font-weight: bold;
+  color: violet;
+  font-size: 20px;
+  margin-left: 38%;
+}
